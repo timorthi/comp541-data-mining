@@ -7,7 +7,6 @@ import pandas as pd
 # set some constants that represent some relevant paths. All uppercase variables represent constants in Python,
 # even though they technically are mutable variables.
 PROJECT_ROOT_PATH = Path(__file__).resolve().parents[1]
-print(PROJECT_ROOT_PATH)
 DATASET_PATH = PROJECT_ROOT_PATH.joinpath('datasets.sample/us_household_income.csv')
 
 # Using pandas' read_csv method to load the file into a pandas.DataFrame object
