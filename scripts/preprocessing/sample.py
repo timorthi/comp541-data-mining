@@ -4,12 +4,13 @@ from pathlib import Path
 import pandas as pd
 
 # In this example I'm going to work with my CSV dataset located in "datasets/us_household_income.csv", so let's
-# set some variables that represent some relevant paths.
+# set some constants that represent some relevant paths. All uppercase variables represent constants in Python,
+# even though they technically are variables and mutable.
 PROJECT_ROOT_PATH = Path(__file__).resolve().parents[2]
 DATASET_PATH = PROJECT_ROOT_PATH.joinpath('datasets/us_household_income.csv')
 
 # Using pandas' read_csv method to load the file into a pandas.DataFrame object
-df = pd.read_csv(DATASET_PATH, encoding='ISO-8859-1')
+df = pd.read_csv(DATASET_PATH, encoding='ISO-8859-1') # Pandas failed to load with utf-8 encoding, so setting it to ISO-8859-1 seems to do the trick.
 
 print('*** Preview the DataFrame using DataFrame.head() ***')
 print(df.head(), end='\n\n\n')
@@ -31,4 +32,4 @@ df.to_csv(PROCESSED_FILE_PATH, encoding='utf-8', index=False) # index=False beca
 
 # Next steps: for a more in-depth tutorial see https://realpython.com/python-data-cleaning-numpy-pandas/
 # Our dataset is clean enough that I think pandas can handle all of it, so for example if you want to clean null values,
-# just google "pandas remove null" and I'm sure you'll be headed in the right direction :)
+# just google "pandas remove null" and I'm sure you'll be pointed in the right direction from there :)
