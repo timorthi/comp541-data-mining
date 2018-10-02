@@ -58,5 +58,5 @@ df.drop(['id', 'State_Code', 'State_Name', 'County', 'Place', 'Type', 'Primary',
 
 ########## EXPORT PRE-PROCESSED DATASET ############
 
-exportPath = "./datasets/pre_processed_income.csv"
+exportPath = "./preprocessing/household_income.csv"
 df.to_csv(exportPath)
