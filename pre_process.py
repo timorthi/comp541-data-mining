@@ -6,7 +6,6 @@ importPath = "./datasets/US_Income_Kaggle.csv"
 
 ############ IMPORT DATASET ######################
 df = pd.read_csv(importPath, encoding="ISO-8859-1 ")
-# print(df.head(5))
 
 
 ################ CHECK MISSING DATA ################
@@ -53,5 +52,11 @@ median_dummy = pd.get_dummies(df['Median-Binned'])
 df = pd.concat([df, mean_dummy], axis=1)
 df = pd.concat([df, median_dummy], axis=1)
 
-# exportPath = "./datasets/pre_processed_income.csv"
-# df.to_csv(exportPath)
+################### DATA REDUCTION ##################
+
+df.drop(['id', 'State_Code', 'State_Name', 'County', 'Place', 'Type', 'Primary', 'ALand', 'AWater'], axis=1, inplace=True)
+
+########## EXPORT PRE-PROCESSED DATASET ############
+
+exportPath = "./datasets/pre_processed_income.csv"
+df.to_csv(exportPath)
