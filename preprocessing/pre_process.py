@@ -2,7 +2,7 @@ import pandas as pd
 import numpy
 import matplotlib.pyplot as plt
 
-importPath = "./datasets/US_Income_Kaggle.csv"
+importPath = "../datasets/US_Income_Kaggle.csv"
 
 ############ IMPORT DATASET ######################
 df = pd.read_csv(importPath, encoding="ISO-8859-1 ")
@@ -58,5 +58,5 @@ df.drop(['id', 'State_Code', 'State_Name', 'County', 'Place', 'Type', 'Primary',
 
 ########## EXPORT PRE-PROCESSED DATASET ############
 
-exportPath = "./preprocessing/household_income.csv"
-df.to_csv(exportPath)
+# exportPath = "./preprocessing/household_income.csv"
+# df.to_csv(exportPath)
