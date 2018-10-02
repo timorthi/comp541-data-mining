@@ -27,10 +27,11 @@ meanBins = [minMeanInt, minMeanInt + meanBinwidth, maxMeanInt - meanBinwidth, ma
 medianBinwidth = int((max(df["Median"])-min(df["Median"]))/4)
 medianBins = [minMedianInt, minMedianInt + medianBinwidth, maxMedianInt - medianBinwidth, maxMedianInt]
 
-group_names = ['Low', 'Medium', 'High']
+mean_group_names = ['MeanLow', 'MeanMedium', 'MeanHigh']
+median_group_names = ['MedianLow', 'MedianMedium', 'MedianHigh']
 
-df['Mean-Binned'] = pd.cut(df['Mean'], meanBins, labels=group_names)
-df['Median-Binned'] = pd.cut(df['Median'], medianBins, labels=group_names)
+df['Mean-Binned'] = pd.cut(df['Mean'], meanBins, labels=mean_group_names)
+df['Median-Binned'] = pd.cut(df['Median'], medianBins, labels=median_group_names)
 
 
 # # plot histogram
@@ -43,6 +44,14 @@ df['Median-Binned'] = pd.cut(df['Median'], medianBins, labels=group_names)
 
 df["Mean"] = (df["Mean"] - df["Mean"].mean())/df["Mean"].std()
 df["Median"] = (df["Median"] - df["Median"].mean())/df["Median"].std()
+
+############## ATTRIBUTE CONSTRUCTION ##############
+
+mean_dummy = pd.get_dummies(df['Mean-Binned'])
+median_dummy = pd.get_dummies(df['Median-Binned'])
+
+df = pd.concat([df, mean_dummy], axis=1)
+df = pd.concat([df, median_dummy], axis=1)
 
 # exportPath = "./datasets/pre_processed_income.csv"
 # df.to_csv(exportPath)
