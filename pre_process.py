@@ -39,5 +39,10 @@ df['Median-Binned'] = pd.cut(df['Median'], medianBins, labels=group_names)
 # _ = plt.ylabel('Number of Cities')
 # plt.show()
 
-# exportPath = "./datasets/processed_income.csv"
+#################### Z-SCORE #######################
+
+df["Mean"] = (df["Mean"] - df["Mean"].mean())/df["Mean"].std()
+df["Median"] = (df["Median"] - df["Median"].mean())/df["Median"].std()
+
+# exportPath = "./datasets/pre_processed_income.csv"
 # df.to_csv(exportPath)
