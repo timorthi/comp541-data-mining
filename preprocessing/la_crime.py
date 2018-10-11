@@ -21,7 +21,8 @@ df = pd.read_csv(DATASET_PATH)
 print("Removing unwanted columns")
 # Drop some of the unneeded fields
 unneeded_columns = ["DR Number", "MO Codes", "Victim Age", "Status Description", 
-"Premise Description", "Area Name", "Location ", "Weapon Description", "Crime Code Description"]
+"Premise Description", "Area Name", "Weapon Description", "Crime Code Description",
+"Crime Code 1","Crime Code 2","Crime Code 3","Crime Code 4"]
 df.drop(columns=unneeded_columns, inplace=True) 
 
 print("Creating and updating Violence column")
