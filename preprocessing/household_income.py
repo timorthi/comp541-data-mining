@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 importPath = "../datasets/US_Income_Kaggle.csv"
 
