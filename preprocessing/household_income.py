@@ -3,6 +3,7 @@ import numpy
 # import matplotlib.pyplot as plt
 
 importPath = "../datasets/US_Income_Kaggle.csv"
+outputPath = "../datasets/us_income_kaggle_processed.csv"
 
 ############ IMPORT DATASET ######################
 df = pd.read_csv(importPath, encoding="ISO-8859-1 ")
@@ -57,5 +58,4 @@ df = pd.concat([df, median_dummy], axis=1)
 df.drop(['id', 'State_Code', 'State_Name', 'County', 'Place', 'Type', 'Primary', 'ALand', 'AWater'], axis=1, inplace=True)
 
 ########## EXPORT PRE-PROCESSED DATASET ############
-
-df.to_csv(importPath)
+df.to_csv(outputPath)
