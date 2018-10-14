@@ -1,6 +1,6 @@
 # Setup
 ### Python
-1. Install Python 3.7 on your system. You can use `python --version` to make sure you have it installed correctly.
+1. Install Python 3.6 on your system. You can use `python --version` to make sure you have it installed correctly.
 2. Clone this repository and `cd` into it
     ```
     $ git clone git@github.com:timorthi/comp541-data-mining.git && cd comp541-data-mining
