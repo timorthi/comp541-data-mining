@@ -25,3 +25,6 @@ for row in csv_f:
         count += 1
 
 print(count)
+
+f.close()
+output.close()
