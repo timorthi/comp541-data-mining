@@ -6,7 +6,7 @@ csv_f = csv.reader(f)
 count = 0
 
 for row in csv_f:
-    if (row[7] == 'United States'):
+    if (row[7] == 'United States' or count == 0):
         output.write('"'+row[0].replace(',',' ')+'","')
         output.write(row[2].replace(',',' ')+'","')
         output.write(row[3].replace(',',' ')+'","')
