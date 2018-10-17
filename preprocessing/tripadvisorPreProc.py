@@ -1,10 +1,12 @@
 import csv
-f = open('tripadvisor_in-restaurant_sample.csv', encoding="UTF-8")
-output = open('tripadvisor_data_processed_USA.csv', 'w', encoding="UTF-8")
+
+print('Loading file...')
+f = open('../datasets/tripadvisor_in-restaurant_sample.csv', encoding="UTF-8")
+output = open('../datasets/tripadvisor_data_processed_USA.csv', 'w', encoding="UTF-8")
 csv_f = csv.reader(f)
 
+print('Processing file...')
 count = 0
-
 for row in csv_f:
     if (row[7] == 'United States' or count == 0):
         output.write('"'+row[0].replace(',',' ')+'","')
@@ -24,7 +26,9 @@ for row in csv_f:
         output.write(row[0].replace(',',' ')+'"\n')
         count += 1
 
-print(count)
+print(f'Processed {count} rows')
 
 f.close()
 output.close()
+
+print('Saved')

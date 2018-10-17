@@ -17,8 +17,7 @@ dataset_paths = {
 }
 
 columns_to_drop = {
-    'user': ['yelping_since', 'elite', 'friends',
-             'compliment_list', 'compliment_more', 'compliment_note',
+    'user': ['elite', 'friends', 'compliment_list', 'compliment_more', 'compliment_note',
              'compliment_photos', 'compliment_profile',
              'compliment_cool', 'cool', 'fans', 'compliment_cute', 'funny',
              'compliment_funny', 'review_count', 'compliment_hot', 'compliment_writer',
@@ -38,7 +37,7 @@ def get_z_score_for_type(df, dataset_type):
 
 for dataset_type in ['user', 'review', 'business']:
     infile_path = dataset_paths[dataset_type]
-    outfile_path = f'{DATASETS_FOLDER_PATH}/yelp_{dataset_type}_processed.json'
+    outfile_path = f'{DATASETS_FOLDER_PATH}/yelp_{dataset_type}_processed.csv'
 
     with open(infile_path, encoding='utf-8') as readfile, open(outfile_path, 'w') as writefile:
         # Read file chunks at a time in order to handle large files
@@ -59,10 +58,10 @@ for dataset_type in ['user', 'review', 'business']:
             df['z-score'] = get_z_score_for_type(df, dataset_type)
 
             # Write to new file and update progress in stdout
-            df.to_json(writefile, orient='records', lines=True)
+            df.to_csv(writefile, index=False)
             total += len(df.index)
             print(f'Processed {total} rows', end='\r')
 
-        print(f'Done processing {total} rows in {dataset_type} dataset.')
+        print(f'Processed {total} rows in {dataset_type} dataset.')
         print(f'File available at: {outfile_path}')
 
