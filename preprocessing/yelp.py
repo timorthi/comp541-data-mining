@@ -17,8 +17,7 @@ dataset_paths = {
 }
 
 columns_to_drop = {
-    'user': ['yelping_since', 'elite', 'friends',
-             'compliment_list', 'compliment_more', 'compliment_note',
+    'user': ['elite', 'friends', 'compliment_list', 'compliment_more', 'compliment_note',
              'compliment_photos', 'compliment_profile',
              'compliment_cool', 'cool', 'fans', 'compliment_cute', 'funny',
              'compliment_funny', 'review_count', 'compliment_hot', 'compliment_writer',
