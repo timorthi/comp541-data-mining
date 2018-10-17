@@ -6,6 +6,7 @@ importPath = "../datasets/US_Income_Kaggle.csv"
 outputPath = "../datasets/us_income_kaggle_processed.csv"
 
 ############ IMPORT DATASET ######################
+print('Loading file...')
 df = pd.read_csv(importPath, encoding="ISO-8859-1 ")
 
 
@@ -15,6 +16,7 @@ df = pd.read_csv(importPath, encoding="ISO-8859-1 ")
 # print(df.isnull().sum())
 
 
+print('Begin processing file')
 ################# BINNING ###########################
 minMeanInt = int(min(df["Mean"]))
 maxMeanInt = int(max(df["Mean"]))
@@ -59,3 +61,4 @@ df.drop(['id', 'State_Code', 'State_Name', 'County', 'Place', 'Type', 'Primary',
 
 ########## EXPORT PRE-PROCESSED DATASET ############
 df.to_csv(outputPath)
+print(f'Saved to {outputPath}')
