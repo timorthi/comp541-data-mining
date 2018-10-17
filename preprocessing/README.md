@@ -3,7 +3,7 @@ Preprocessing and integration scripts go in this directory.
 
 ## Running The Scripts Against Your Local Datasets
 1. Make sure you have all the original datasets in the `datasets` folder.
-2. If your local dataset filenames don't match the ones specified in the scripts, just change the scripts to point to the correct path, but don't change the output file names. **Don't commit these changes to GitHub**.
+2. If your local dataset filenames don't match the ones specified in the scripts, just change the scripts to point to the correct path for the original dataset files, but don't change the output file names. **Don't commit these changes to GitHub**.
 3. `cd` into this folder from the root directory:
 ```bash
 $ cd preprocessing
@@ -28,5 +28,5 @@ $ python integrate_all.py
 ```
 You should see the following files added in the `datasets` folder:
 ```
-yelp_integrated_csv
+yelp_integrated.csv
 ```
