@@ -29,4 +29,9 @@ $ python integrate_all.py
 You should see the following files added in the `datasets` folder:
 ```
 yelp_integrated.csv
+final_integrated_data.csv
 ```
+
+
+#### `final_integrated_data.csv` contains information that has been joined on the appropriate columns from the _Yelp Review_, _Yelp User_, _Yelp Business_, and _US Household Income_ datasets.
+#### Each row in this final dataset represents a different review/rating for the given business_id, along with the user's information and US household income information for the business' ZIP code.
